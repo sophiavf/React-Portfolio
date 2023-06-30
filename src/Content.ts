@@ -1,6 +1,7 @@
-// import images
+// import photos
 import Hero_person from "./assets/images/Hero/person.png";
 
+// skills icons
 import reactjs from "./assets/images/Skills/react.png";
 import nodejs from "./assets/images/Skills/node.png";
 import typescript from "./assets/images/Skills/typeScript.png";
@@ -16,20 +17,32 @@ import playwright from "./assets/images/Skills/playwright.svg";
 import java from "./assets/images/Skills/java.png";
 import googleCloudFunctions from "./assets/images/Skills/googleCloudFunctions.png";
 
+// project gifs abd pics
 import project1 from "./assets/images/Projects/MunichTechEventAggregator.gif";
 import project2 from "./assets/images/Projects/WeatherApp.gif";
+import project3 from "./assets/images/Projects/MyPortfolioSite.gif";
 
 // import icons from react-icons
 import { GrMail } from "react-icons/gr";
-import { MdArrowForward } from "react-icons/md";
-
+import { MdArrowForward, MdOutlinePermContactCalendar } from "react-icons/md";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-
 import { GoProjectRoadmap, GoGraph, GoCreditCard } from "react-icons/go";
-import { TbSmartHome } from "react-icons/tb";
-import { BiUser } from "react-icons/bi";
-import { RiServiceLine, RiProjectorLine } from "react-icons/ri";
-import { MdOutlinePermContactCalendar } from "react-icons/md";
+import { BiCodeAlt, BiHome } from "react-icons/bi";
+import { RiProjectorLine } from "react-icons/ri";
+import { HiOutlineDocument } from "react-icons/hi";
+
+import { LuHelpingHand } from "react-icons/lu";
+
+const technologyObjects = [
+	{
+		image: reactjs,
+		name: "",
+	},
+	{
+		image: typescript,
+		name: "",
+	},
+];
 
 const currentYear = new Date().getFullYear();
 
@@ -37,19 +50,23 @@ export const content = {
 	nav: [
 		{
 			link: "#home",
-			icon: TbSmartHome,
+			icon: BiHome,
 		},
 		{
 			link: "#skills",
-			icon: BiUser,
-		},
-		{
-			link: "#what I offer",
-			icon: RiServiceLine,
+			icon: BiCodeAlt,
 		},
 		{
 			link: "#projects",
 			icon: RiProjectorLine,
+		},
+		{
+			link: "#whatIoffer",
+			icon: LuHelpingHand,
+		},
+		{
+			link: "#resume",
+			icon: HiOutlineDocument,
 		},
 		{
 			link: "#contact",
@@ -166,12 +183,24 @@ export const content = {
 				title: "Munich Tech Event Aggregator",
 				id: "MunichTechEventAggregator",
 				image: project1,
+				technologies: [typescript, reactjs, reactRouter, playwright, jest],
 				livePreview: "https://my-tech-event-aggregator.web.app/",
 				repo: "https://github.com/sophiavf/My-Project-Event-App",
-				purposeAndGoal: "",
-				stackExplanation: "",
-				problemsAndProcess: "",
-				roadmap: "",
+				purposeAndGoal:
+					"As a proactive software developer, I prioritise staying up-to-date with best practices and technologies through industry events. However, I noticed a lack of a centralised view for relevant tech events in Munich. To address this, I developed an application for my personal use that consolidates tech events from Meetup and Eventbrite into a centralised database which is then displayed on my frontend. The application utilises TypeScript, React, Playwright for data collection, Firebase (hosting, serverless functions, and Firestore database), and Tailwind CSS to enable more efficient event discovery. Jest was used to write unit and integration tests for the backend code.",
+				stackExplanation:
+					"I chose Firebase, a google back end as a service platform, which streamlines the process of building full-stack apps on top of google cloud products. It also allows me to add authorization later. For the database, I am using Firestore which is a no SQL database to store the event records.",
+				problemsAndProcess: [
+					"One of the challenges I encountered was obtaining data from both Meetup and Eventbrite, as they utilize different approaches for data delivery. For Eventbrite, instead of scraping the website DOM, I used Playwright to set up a listener for responses containing specific text, which efficiently captured the JSON data for all events. As Eventbrite uses traditional pagination, it was necessary to cycle through all pages to retrieve complete event data.",
+					"On the other hand, Meetup employs an infinite scrolling approach. In the server-side generated content, a script tag contains all the events. By extracting this information, I was able to retrieve the desired data from Meetup.",
+					"Given that my event scrapers required external HTTP requests, I upgraded to the paid tier of Firebase. To avoid potential issues when running on Google Cloud Functions, I conducted thorough testing using the Playwright testing library and Jest. This ensured the accuracy of the extracted data and verified the proper functioning of the Firestore functions.",
+					"I implemented three scheduled cloud functions in total: 'Cleanup Events' function removes events that have already occurred. 'Meetup Scraper' function retrieves all tech events in Munich from meetup.com. 'Eventbrite Scraper' function retrieves all free tech events from eventbrite.com. During the scraper runs, a comparison is performed between the newly scraped events and those in the database, removing any events that are no longer available on the websites, which may be due to cancellations or changes made by the organizers.",
+				],
+				roadmap: [
+					"Allow users to search for tech events in various cities, beyond just Munich.",
+					"Implement authorization functionality to enable users to favorite events and personalize their experience.",
+					"Display information on the frequency of events on certain days, aiding event organizers in avoiding clashes and helping attendees choose from a wider range of options.",
+				],
 			},
 			{
 				title: "Weather App",
@@ -181,27 +210,29 @@ export const content = {
 				repo: "https://github.com/sophiavf/Project-Weather-App",
 				purposeAndGoal: "",
 				stackExplanation: "",
-				problemsAndProcess: "",
-				roadmap: "",
+				problemsAndProcess: [],
+				roadmap: ["Ford", "BMW", "Fiat"],
 			},
 			{
 				title: "My Portfolio Site",
 				id: "MyPortfolioSite",
-				image: project2,
-				livePreview: "",
-				repo: "",
+				image: project3,
+				livePreview: "devbysophia.online",
+				repo: "https://github.com/sophiavf/React-Portfolio",
 				purposeAndGoal: "",
 				stackExplanation: "",
-				problemsAndProcess: "",
-				roadmap: "",
+				problemsAndProcess: [],
+				roadmap: ["Ford", "BMW", "Fiat"],
 			},
 		],
 	},
 	downloadResume: {
-		title: "",
-		subtitle: "",
-		para: "",
+		title: "Resume",
+		subtitle: "Review my Experience & Formal Qualifications",
+		para: "If you have any further questions about my skills or experience, please don't hesitate to contact me below",
 		btnText: "Download Resume",
+		btnLink:
+			"https://drive.google.com/file/d/1XEJR-zIFEx4oiIwg0ZiKfrFB-rRTGTzL/view?usp=sharing",
 	},
 	Contact: {
 		title: "Contact Me",
@@ -225,6 +256,6 @@ export const content = {
 		],
 	},
 	Footer: {
-		text: `All © Copy Right Reserved ${currentYear}`,
+		text: `© ${currentYear} Sophia. All rights reserved.`,
 	},
 };
