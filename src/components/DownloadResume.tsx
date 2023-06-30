@@ -2,10 +2,12 @@ import React from "react";
 import { content } from "../Content";
 import { Link } from "react-router-dom";
 
+
+
 export default function DownloadResume() {
 	const { downloadResume } = content;
 	return (
-		<section className="bg-white">
+		<section className="bg-white" id="resume">
 			<div className="md:container px-5 py-14">
 				<h2 className="title" data-aos="fade-down">
 					{downloadResume.title}
