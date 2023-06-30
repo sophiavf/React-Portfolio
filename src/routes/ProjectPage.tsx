@@ -66,14 +66,22 @@ export default function ProjectPage() {
 					<div className="flex justify-around w-full py-8">
 						<button className="btn">
 							{targetProject && (
-								<Link to={targetProject.livePreview} target="_blank">
+								<Link
+									to={targetProject.livePreview}
+									onClick={() =>
+										window.open(targetProject.livePreview, "_blank")
+									}
+								>
 									Open live preview
 								</Link>
 							)}
 						</button>
 						<button className="btn">
 							{targetProject && (
-								<Link to={targetProject.repo} target="_blank">
+								<Link
+									to={targetProject.repo}
+									onClick={() => window.open(targetProject.repo, "_blank")}
+								>
 									Click to see code
 								</Link>
 							)}
