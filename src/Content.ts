@@ -10,7 +10,7 @@ import git from "./assets/images/Skills/git.png";
 import tailwindCss from "./assets/images/Skills/tailwindCSS.png";
 import reactRouter from "./assets/images/Skills/reactRouter.png";
 import jest from "./assets/images/Skills/jest.png";
-import vite from "./assets/images/Skills/Vitejs-logo.svg";
+import vite from "./assets/images/Skills/Vitejslogo.svg";
 import express from "./assets/images/Skills/expressjs.png";
 import javaScript from "./assets/images/Skills/JavaScript.png";
 import playwright from "./assets/images/Skills/playwright.svg";
