@@ -1,33 +1,30 @@
-import React, { createElement, useRef } from "react";
+import React, { createElement } from "react";
 import { content } from "../Content";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
 	const { Contact } = content;
-	const form = useRef<HTMLFormElement>(null);
 
-	const sendEmail = (e: { preventDefault: () => void }) => {
+	const sendEmail = (e: { preventDefault: () => void; target: any; }) => {
 		e.preventDefault();
-		if (form.current == null) return;
+		const form = e.target;
 
 		emailjs
 			.sendForm(
-				process.env.REACT_APP_YOUR_SERVICE_I ?? "",
-				process.env.REACT_APP_YOUR_TEMPLATE_ID ?? "",
-				form.current,
-				process.env.REACT_APP_YOUR_PUBLIC_KEY ?? ""
+				import.meta.env.VITE_YOUR_SERVICE_ID ?? "",
+				import.meta.env.VITE_YOUR_TEMPLATE_ID ?? "",
+				form,
+				import.meta.env.VITE_YOUR_PUBLIC_KEY ?? ""
 			)
 			.then(
 				(result) => {
 					console.log(result.text);
-					toast.success(`Email sent successfully`);
+					toast.success("Email sent successfully");
 					// Clear all input field values
-					if (form.current) {
-						form.current.reset();
-					}
+					form.reset();
 					// Success toast message
-					toast.success("Email send Successfully");
+					toast.success("Email sent Successfully");
 				},
 				(error) => {
 					console.log(error.text);
@@ -35,11 +32,12 @@ export default function Contact() {
 				}
 			);
 	};
+
 	return (
 		<section className="bg-dark_primary text-white" id="contact">
 			<Toaster />
 			<div className="md:container px-5 py-14">
-				<h2 className="title text-white" data-aos="fade-down">
+				<h2 className="title !text-white" data-aos="fade-down">
 					{Contact.title}
 				</h2>
 				<h4 className="subtitle text-white" data-aos="fade-down">
@@ -48,12 +46,11 @@ export default function Contact() {
 				<br />
 				<div className="flex gap-10 md:flex-row flex-col">
 					<form
-						ref={form}
 						onSubmit={sendEmail}
 						data-aos="fade-up"
 						className="flex-1 flex flex-col gap-5"
 					>
-						{/* Input name as same as email template values*/}
+						{/* Input name as same & email template values */}
 						<input
 							type="text"
 							name="from_name"
@@ -75,7 +72,9 @@ export default function Contact() {
 							className="border border-white p-3 rounded h-44"
 							required
 						></textarea>
-						<button className="btn bg-white text-dark_primary">Submit</button>
+						<button className="btn bg-white text-dark_primary" type="submit">
+							Submit
+						</button>
 					</form>
 					<div className="flex-1 flex flex-col gap-5">
 						{Contact.social_media.map((content, i) => (
@@ -86,7 +85,12 @@ export default function Contact() {
 								className="flex items-center gap-2"
 							>
 								<h4 className="text-white">{createElement(content.icon)}</h4>
-								<a href={content.link} className="font-Poppins" target="_blank">
+								<a
+									href={content.link}
+									className="font-Poppins"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
 									{content.text}
 								</a>
 							</div>

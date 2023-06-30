@@ -1,10 +1,10 @@
 import Navbar from "../Layouts/Navbar";
-import Hero from "../components/Hero";
-import Skills from "../components/Skills";
-import Service from "../components/WhatIOffer";
-import Projects from "../components/Projects";
-import Contact from "../components/Contact";
-import DownloadResume from "../components/DownloadResume";
+import Hero from "../Components/Hero";
+import Skills from "../Components/Skills";
+import Service from "../Components/WhatIOffer";
+import Projects from "../Components/Projects";
+import Contact from "../Components/Contact";
+import DownloadResume from "../Components/DownloadResume";
 import Footer from "../Layouts/Footer";
 import React, { useEffect } from "react";
 

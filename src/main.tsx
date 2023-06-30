@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-import Root from "./routes/Root";
-import ProjectPage from "./routes/ProjectPage";
+import Root from "./Routes/Root";
+import ProjectPage from "./Routes/ProjectPage";
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement
 );
