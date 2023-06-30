@@ -1,6 +1,5 @@
 import React from "react";
 import { content } from "../Content";
-import { Link } from "react-router-dom";
 
 export default function Hero() {
 	const { hero } = content;
