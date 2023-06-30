@@ -3,24 +3,20 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 import Root from "./routes/Root";
+import ErrorPage from "./routes/ErrorPage";
+import ProjectPage from "./routes/ProjectPage";
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement
 );
-import {
-	createBrowserRouter,
-	RouterProvider,
-	Route,
-	Link,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Root />,
-	},
-]);
 root.render(
-	<React.StrictMode>
-		<RouterProvider router={router} />
-	</React.StrictMode>
+	<div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Root />} />
+				<Route path="/project/:projectId" element={<ProjectPage />} />,
+			</Routes>
+		</BrowserRouter>
+	</div>
 );
