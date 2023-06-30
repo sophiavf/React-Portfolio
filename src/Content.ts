@@ -202,25 +202,10 @@ export const content = {
 				],
 			},
 			{
-				title: "Weather App",
-				id: "WeatherApp",
-				image: project2,
-				livePreview: "https://sophiavf.github.io/Project-Weather-App/",
-				repo: "https://github.com/sophiavf/Project-Weather-App",
-				purposeAndGoal:
-					"I created a weather application that is not only secure and responsive but also a playground for deepening my expertise in React hooks. With a keen eye on proficiently managing the application's state, React hooks like useState, useEffect, and context were utilized to achieve ease of reuse and avoid prop-drilling.",
-				stackExplanation:
-					"The weather application boasts a serverless architecture, combining the framework Express.js with the versatility of Netlify’s AWS serverless functions. This synergy not only streamlined the hosting process but also ensured that the API keys remained protected. Tailwind CSS was used to style the components, making the application visually appealing and responsive.",
-				problemsAndProcess: [
-					"For this project I was faced with the challenge of scarce and outdated documentation, particularly regarding the utilization of Express for crafting an API on Netlify. The documentation was from three years ago, and some of the features had since been deprecated. Through troubleshooting and research I made it work. To make the app more dynamic, it automatically fetches the user's location based on their IP address and uses the current weather condition to retrieve a relevant photo to be used as the background.",
-				],
-				roadmap: [],
-			},
-			{
 				title: "My Portfolio Site",
 				id: "MyPortfolioSite",
 				image: project3,
-				livePreview: "devbysophia.online",
+				livePreview: "https://devbysophia.online/",
 				repo: "https://github.com/sophiavf/React-Portfolio",
 				purposeAndGoal:
 					"I embarked on creating a personal website to not only showcase my intriguing projects and diverse skill set but also to refine my proficiency in React. This platform will serve as a testament to my dedication and passion for web development.",
@@ -235,6 +220,21 @@ export const content = {
 					"Experience Timeline: Incorporate a dynamic visual component on the root router to visually portray my education and relevant experiences.",
 					"Blog Section: A dedicated space linking to articles I’ve penned, serving as a window into my thoughts and musings on various subjects.",
 				],
+			},
+			{
+				title: "Weather App",
+				id: "WeatherApp",
+				image: project2,
+				livePreview: "https://sophiavf.github.io/Project-Weather-App/",
+				repo: "https://github.com/sophiavf/Project-Weather-App",
+				purposeAndGoal:
+					"I created a weather application that is not only secure and responsive but also a playground for deepening my expertise in React hooks. With a keen eye on proficiently managing the application's state, React hooks like useState, useEffect, and context were utilized to achieve ease of reuse and avoid prop-drilling.",
+				stackExplanation:
+					"The weather application boasts a serverless architecture, combining the framework Express.js with the versatility of Netlify’s AWS serverless functions. This synergy not only streamlined the hosting process but also ensured that the API keys remained protected. Tailwind CSS was used to style the components, making the application visually appealing and responsive.",
+				problemsAndProcess: [
+					"For this project I was faced with the challenge of scarce and outdated documentation, particularly regarding the utilization of Express for crafting an API on Netlify. The documentation was from three years ago, and some of the features had since been deprecated. Through troubleshooting and research I made it work. To make the app more dynamic, it automatically fetches the user's location based on their IP address and uses the current weather condition to retrieve a relevant photo to be used as the background.",
+				],
+				roadmap: [],
 			},
 		],
 	},
