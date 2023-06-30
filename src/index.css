@@ -54,7 +54,7 @@
 @layer utilities {
 	.btn {
 		@apply py-2 px-9 border-2 rounded-md
-     border-dark_primary rounded-br-3xl font-medium;
+     border-dark_primary rounded-br-3xl font-medium bg-white text-dark_primary transition-transform duration-300 hover:scale-105;
 	}
 	.title {
 		@apply md:text-3xl text-2xl;
@@ -63,3 +63,4 @@
 .swiper-pagination-bullet {
 	@apply w-3 h-3 bg-dark_primary;
 }
+
