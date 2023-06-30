@@ -42,7 +42,9 @@ export default function Contact() {
 				<h2 className="title text-white" data-aos="fade-down">
 					{Contact.title}
 				</h2>
-				<h4 className="subtitle text-white" data-aos="fade-down">{Contact.subtitle}</h4>
+				<h4 className="subtitle text-white" data-aos="fade-down">
+					{Contact.subtitle}
+				</h4>
 				<br />
 				<div className="flex gap-10 md:flex-row flex-col">
 					<form
