@@ -8,9 +8,16 @@ import firebase from "./assets/images/Skills/firebase.png";
 import git from "./assets/images/Skills/git.png";
 import tailwindCss from "./assets/images/Skills/tailwindCSS.png";
 import reactRouter from "./assets/images/Skills/reactRouter.png";
+import jest from "./assets/images/Skills/jest.png";
+import vite from "./assets/images/Skills/Vitejs-logo.svg";
+import express from "./assets/images/Skills/expressjs.png";
+import javaScript from "./assets/images/Skills/JavaScript.png";
+import playwright from "./assets/images/Skills/playwright.svg";
+import java from "./assets/images/Skills/java.png";
+import googleCloudFunctions from "./assets/images/Skills/googleCloudFunctions.png";
 
 import project1 from "./assets/images/Projects/MunichTechEventAggregator.gif";
-import project2 from "./assets/images/Projects/WeatherApp.png";
+import project2 from "./assets/images/Projects/WeatherApp.gif";
 
 // import icons from react-icons
 import { GrMail } from "react-icons/gr";
@@ -37,7 +44,7 @@ export const content = {
 			icon: BiUser,
 		},
 		{
-			link: "#services",
+			link: "#what I offer",
 			icon: RiServiceLine,
 		},
 		{
@@ -50,7 +57,7 @@ export const content = {
 		},
 	],
 	hero: {
-		title: "Web Developer",
+		title: "Software Developer",
 		firstName: "SOPHIA",
 		LastName: "FAIRBAIRN",
 		btnText: "Hire Me",
@@ -58,61 +65,82 @@ export const content = {
 		hero_content: [
 			{
 				count: "4+",
-				text: "Years of Experinse in Web development",
+				text: "Years of transferable experience in project management and marketing",
 			},
 			{
-				count: "20+",
-				text: "Projects Worked in my career",
+				count: "2+",
+				text: "Years of studying computer engineering & honing my skills through projects",
 			},
 		],
 	},
 	//https://icons8.de/icons/
 	skills: {
 		title: "Skills",
-		subtitle: "MY TOP SKILLS",
+		subtitle: "MY TECHNICAL SKILLS",
 		skills_content: [
 			{
 				name: "TypeScript",
-				para: "Lorem ipsum text  dummy",
 				logo: typescript,
 			},
 			{
 				name: "Node.js",
-				para: "Lorem ipsum text  dummy",
 				logo: nodejs,
 			},
 			{
 				name: "React.js",
-				para: "Lorem ipsum text  dummy",
 				logo: reactjs,
 			},
 			{
 				name: "Firebase",
-				para: "Lorem ipsum text  dummy",
 				logo: firebase,
 			},
 			{
 				name: "Git",
-				para: "Lorem ipsum text  dummy",
 				logo: git,
 			},
 			{
 				name: "Tailwind CSS",
-				para: "Lorem ipsum text  dummy",
 				logo: tailwindCss,
 			},
 			{
 				name: "React Router",
-				para: "Lorem ipsum text  dummy",
 				logo: reactRouter,
+			},
+			{
+				name: "Jest",
+				logo: jest,
+			},
+			{
+				name: "Vite",
+				logo: vite,
+			},
+			{
+				name: "Express.js",
+				logo: express,
+			},
+			{
+				name: "JavaScript",
+				logo: javaScript,
+			},
+			{
+				name: "Playwright",
+				logo: playwright,
+			},
+			{
+				name: "Java",
+				logo: java,
+			},
+			{
+				name: "Google Cloud Functions",
+				logo: googleCloudFunctions,
 			},
 		],
 		icon: MdArrowForward,
 	},
-	services: {
+	WhatIOffer: {
 		title: "Transferable skills & Experience",
 		subtitle: "WHAT I OFFER",
-		service_content: [
+		WhatIOffer_content: [
 			{
 				title: "Project & Product Management",
 				para: "With experience in account management at a software company, I've collaborated with key stakeholders to scope, test, and implement new features for web applications. This experience has allowed me to understand the software development lifecycle and the importance of clear communication between technical and non-technical teams as well as QA. I've led client calls and projects from conception to completion, ensuring all deliverables met project requirements and were delivered on time. This experience will be invaluable in a software development role where project management skills are crucial.",
@@ -132,21 +160,48 @@ export const content = {
 	},
 	Projects: {
 		title: "Projects",
-		subtitle: "MY CREATION",
+		subtitle: "MY CREATIONS",
 		project_content: [
 			{
 				title: "Munich Tech Event Aggregator",
+				id: "MunichTechEventAggregator",
 				image: project1,
+				livePreview: "https://my-tech-event-aggregator.web.app/",
+				repo: "https://github.com/sophiavf/My-Project-Event-App",
+				purposeAndGoal: "",
+				stackExplanation: "",
+				problemsAndProcess: "",
+				roadmap: "",
 			},
 			{
-				title: "Social Media web",
+				title: "Weather App",
+				id: "WeatherApp",
 				image: project2,
+				livePreview: "https://sophiavf.github.io/Project-Weather-App/",
+				repo: "https://github.com/sophiavf/Project-Weather-App",
+				purposeAndGoal: "",
+				stackExplanation: "",
+				problemsAndProcess: "",
+				roadmap: "",
 			},
 			{
 				title: "My Portfolio Site",
+				id: "MyPortfolioSite",
 				image: project2,
+				livePreview: "",
+				repo: "",
+				purposeAndGoal: "",
+				stackExplanation: "",
+				problemsAndProcess: "",
+				roadmap: "",
 			},
 		],
+	},
+	downloadResume: {
+		title: "",
+		subtitle: "",
+		para: "",
+		btnText: "Download Resume",
 	},
 	Contact: {
 		title: "Contact Me",
