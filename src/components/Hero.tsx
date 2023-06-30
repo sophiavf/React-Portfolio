@@ -1,5 +1,6 @@
 import React from "react";
 import { content } from "../Content";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
 	const { hero } = content;
@@ -22,7 +23,9 @@ export default function Hero() {
 					<h2>{hero.title}</h2>
 					<br />
 					<div className="flex">
-						<button className="btn">{hero.btnText}</button>
+						<button className="btn">
+							<a href="#resume">{hero.btnText}</a>
+						</button>
 					</div>
 					<div className="flex flex-col gap-10 mt-10">
 						{hero.hero_content.map((content, i) => (

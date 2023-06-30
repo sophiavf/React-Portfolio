@@ -30,36 +30,54 @@ export default function ProjectPage() {
 							alt="..."
 						/>
 					</div>
-					<div className="max-w-3xl mx-auto">
+					<div className="max-w-3xl mx-auto pt-8">
 						<h2 className="text-2xl font-bold mb-2">
 							Project Purpose and Goal
 						</h2>
-						<p className="mb-6"></p>
+						<p className="mb-6">{targetProject?.purposeAndGoal}</p>
 						<h2 className="text-2xl font-bold mb-2">
 							Web Stack and Explanation
 						</h2>
-						<p className="mb-6"></p>
+						<p className="mb-6">{targetProject?.stackExplanation}</p>
 						<h2 className="text-2xl font-bold mb-2">
 							Problems and Thought Process
 						</h2>
-						<p className="mb-6"></p>
-						<h2 className="text-2xl font-bold mb-2">Roadmap</h2>
-						<p className="mb-6"></p>
-						<div className="flex justify-between">
-							<button className="btn">
-								<Link
-									to={{ pathname: targetProject?.livePreview }}
-									target="_blank"
-								>
+						{targetProject?.problemsAndProcess &&
+							targetProject.problemsAndProcess.length > 0 &&
+							targetProject?.problemsAndProcess.map((paragraph, index) => (
+								<p key={index} className="py-3">
+									{paragraph}
+								</p>
+							))}
+						<p className="mb-6">{targetProject?.problemsAndProcess}</p>
+						<div>
+							{targetProject?.roadmap && targetProject.roadmap.length > 0 && (
+								<>
+									<h2 className="text-2xl font-bold mb-2">Roadmap</h2>
+									<ul className="list-disc ml-6">
+										{targetProject.roadmap.map((backlogItem, index) => (
+											<li key={index}>{backlogItem}</li>
+										))}
+									</ul>
+								</>
+							)}
+						</div>
+					</div>
+					<div className="flex justify-around w-full py-8">
+						<button className="btn">
+							{targetProject && (
+								<Link to={targetProject.livePreview} target="_blank">
 									Open live preview
 								</Link>
-							</button>
-							<button className="btn">
-								<Link to={{ pathname: targetProject?.repo }} target="_blank">
+							)}
+						</button>
+						<button className="btn">
+							{targetProject && (
+								<Link to={targetProject.repo} target="_blank">
 									Click to see code
 								</Link>
-							</button>
-						</div>
+							)}
+						</button>
 					</div>
 				</div>
 			</div>
