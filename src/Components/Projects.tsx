@@ -1,13 +1,14 @@
 import React from "react";
 import { content } from "../Content";
 
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 
 export default function Projects() {
@@ -33,11 +34,12 @@ export default function Projects() {
 						}}
 						data-aos="fade-left"
 						spaceBetween={20}
-						autoplay={{ delay: 2000 }}
+						autoplay={{ delay: 3000 }}
 						loop={true}
-						modules={[Pagination]}
+						modules={[Pagination, Navigation]}
 						className="rounded-3xl pb-16 md:w-7/12 w-11/12 drop-shadow-primary self-start"
 						slidesPerView={1}
+						navigation={true}
 					>
 						{Projects.project_content.map((content, i) => (
 							<SwiperSlide

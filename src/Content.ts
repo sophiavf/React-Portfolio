@@ -187,18 +187,19 @@ export const content = {
 				livePreview: "https://my-tech-event-aggregator.web.app/",
 				repo: "https://github.com/sophiavf/My-Project-Event-App",
 				purposeAndGoal:
-					"As a proactive software developer, I prioritize staying up-to-date with best practices and technologies by attending industry events. However, I noticed a lack of a centralised view for relevant tech events in Munich. To address this, I developed an application for my personal use that consolidates tech events from Meetup and Eventbrite into a centralised database which is then displayed on my frontend. The application utilises TypeScript, React, Playwright for data collection, Firebase (hosting, serverless functions, and Firestore database), and Tailwind CSS to enable more efficient event discovery. Jest was used to write unit and integration tests for the backend code.",
+					"The aim of this project was to address the absence of a single resource for tracking technology-related events in Munich. Consequently, I created an application to amalgamate data from Meetup and Eventbrite, presenting it through a frontend interface. The tool is developed using TypeScript, React, Playwright for data scraping, Firebase for backend services, and Tailwind CSS for styling. Moreover, Jest is utilized for backend testing to ensure robustness.",
 				stackExplanation:
-					"I opted for Firebase because it's a robust and efficient backend-as-a-service platform by Google. It streamlines full-stack application development and offers easy integration with Google Cloud products. Firebase will also facilitate adding user authorization in the future. Firestore, a NoSQL database within Firebase, is used to store event records.",
+					"Backend Service: Firebase was chosen due to its comprehensive back-end-as-a-service capabilities. It streamlines the development process and integrates efficiently with Google Cloud products. The potential future integration of user authorization was also a consideration. Database: Firestore, a NoSQL database within Firebase, was adopted for storing event information.",
 				problemsAndProcess: [
-					"Collecting data from Meetup and Eventbrite was challenging due to their different data delivery methods. For Eventbrite, I used Playwright to listen for responses containing specific text, capturing JSON data efficiently. Meetup's data was extracted from a script tag in server-side generated content.",
-					"I upgraded to Firebase's paid tier to support the external HTTP requests made by the scrapers. To ensure accuracy and reliability as well as avoid any high usage bills, I thoroughly tested the scrapers with Playwright and Jest",
-					"Three cloud functions, running daily, were implemented: 1)'Cleanup Events' removes past events. 2) 'Meetup Scraper' collects tech events in Munich from meetup.com. 3) 'Eventbrite Scraper' gathers free tech events from eventbrite.com. After scraping, the application compares the new data with the existing records in the database and removes any events no longer available, accounting for cancellations or changes by organizers.",
+					"Extracting data from Meetup and Eventbrite was complex due to varied data formats. Playwright was used with Eventbrite to monitor responses containing specific text, thus capturing JSON data. For Meetup, data extraction was performed from a script tag in server-rendered content",
+					"To accommodate external HTTP requests made by the data collectors, I upgraded to Firebase's paid tier. To avoid inaccuracy and ensure cost-effectiveness, extensive testing was performed using Playwright and Jest.",
+					"Three cloud functions were deployed to run daily: 1) Cleanup Events - deletes outdated events. 2) Meetup Scraper - aggregates technology events in Munich from meetup.com. 3) Eventbrite Scraper - accumulates free technology events from eventbrite.com.",
+					"After data collection, the application cross-references the newly scraped data with existing records to update changes or removals due to event cancellations or alterations.",
 				],
 				roadmap: [
-					"Expand the application to allow users to search for tech events in different cities.",
-					"Implement user authorization for personalized features like favoriting events.",
-					"Display data on event frequencies to help organizers strategically schedule their events.",
+					"Geographic Expansion: Evolve the application to facilitate tech event searches in various cities.",
+					"User Authorization: Implement user authentication to enable personalized features such as event bookmarking.",
+					"Data Visualization: Exhibit data on event frequencies to assist event organizers in planning their schedules strategically.",
 				],
 			},
 			{
@@ -208,17 +209,17 @@ export const content = {
 				livePreview: "https://devbysophia.online/",
 				repo: "https://github.com/sophiavf/React-Portfolio",
 				purposeAndGoal:
-					"I embarked on creating a personal website to not only showcase my intriguing projects and diverse skill set but also to refine my proficiency in React. This platform will serve as a testament to my dedication and passion for web development.",
+					"I constructed this personal website to exhibit my portfolio and skills in a structured manner. Additionally, I used this project as an opportunity to improve my React skills. The idea is to have a functional evidence of my ongoing engagement and commitment to development.",
 				stackExplanation:
-					"I chose Vite as my bundler for its seamless integration with Github Pages and blazing fast build times. React.js was an obvious choice to enable component reusability and facilitate a more organized codebase. TypeScript was harnessed to ensure type safety, thus mitigating the risk of bugs. To further streamline the user experience, React Router was employed for effortless navigation among components. Tailwind CSS was key for bringing my aesthetic vision to life, ensuring a sleek and responsive modern design.",
+					"Bundler: I adopted Vite because it integrates well with GitHub Pages and exhibits efficient build times - this ensures faster deployment cycles. Main Framework: React.js was utilized because its component-centric architecture is conducive to reusable code and structured coding practices. Type Checking: TypeScript was integrated to enforce type consistency; this aids in preemptively catching errors and improves code quality. Navigation Handling: To achieve clutter-free navigation, React Router was used; this library makes it easier to switch between components and adds to user experience. Styling: Tailwind CSS was chosen due to its provision for custom styling options, which is imperative for a responsive and modern look.",
 				problemsAndProcess: [
-					"Achieving a harmonious balance between responsiveness and aesthetics, particularly in the hero and projects components, was at times a challenging task. My endeavor to craft an engaging and fluid experience for all device types was met with several iterations and testing using the help of the development server and Chrome DevTools.",
+					"A major challenge was to achieve a balance between responsive design and aesthetic appeal, mainly in the hero and project sections. To establish this, I undertook multiple rounds of code tweaking and optimization, leveraging the development server and Chrome DevTools.",
 				],
 				roadmap: [
-					"Skills Showcase: Store skills in an array of objects, each containing an icon and the name. This will allow for a streamlined and reusable display of my technical proficiencies.",
-					"Project Technologies: Introduce a component on each project page that meticulously details the technologies and tools utilized.",
-					"Experience Timeline: Incorporate a dynamic visual component on the root router to visually portray my education and relevant experiences.",
-					"Blog Section: A dedicated space linking to articles I’ve penned, serving as a window into my thoughts and musings on various subjects.",
+					"Skills Representation: I have structured to accumulate skills in an array of objects with each containing an icon and the skill name. This format will ensure an efficient and reusable manner of displaying skills.",
+					"Technology Details: I will add a section on each project page, listing the technologies and tools used. This serves to inform the viewer of the technicalities of each project.",
+					"Experience Chart: I will incorporate a component that graphically displays my educational and professional milestones.",
+					"Blogs: I plan to have an allocated area linking to my articles, facilitating an avenue for sharing my professional viewpoints and analyses.",
 				],
 			},
 			{
@@ -228,11 +229,12 @@ export const content = {
 				livePreview: "https://sophiavf.github.io/Project-Weather-App/",
 				repo: "https://github.com/sophiavf/Project-Weather-App",
 				purposeAndGoal:
-					"I created a weather application that is not only secure and responsive but also a playground for deepening my expertise in React hooks. With a keen eye on proficiently managing the application's state, React hooks like useState, useEffect, and context were utilized to achieve ease of reuse and avoid prop-drilling.",
+					"The objective behind developing this weather application was to create a secure and responsive tool while simultaneously enhancing my familiarity with React hooks. The focus was primarily on efficient state management using React hooks such as useState, useEffect, and context, to foster reusability and circumvent prop-drilling.",
 				stackExplanation:
-					"The weather application boasts a serverless architecture, combining the framework Express.js with the versatility of Netlify’s AWS serverless functions. This synergy not only streamlined the hosting process but also ensured that the API keys remained protected. Tailwind CSS was used to style the components, making the application visually appealing and responsive.",
+					"Architecture and Framework: The application is based on a serverless architecture, utilizing Express.js in conjunction with Netlify’s AWS serverless functions. This combination streamlined the deployment process while ensuring the security of API keys. Styling: Tailwind CSS was employed for styling components, which contributed to both the visual appeal and responsiveness of the application.",
 				problemsAndProcess: [
-					"For this project I was faced with the challenge of scarce and outdated documentation, particularly regarding the utilization of Express for crafting an API on Netlify. The documentation was from three years ago, and some of the features had since been deprecated. Through troubleshooting and research I made it work. To make the app more dynamic, it automatically fetches the user's location based on their IP address and uses the current weather condition to retrieve a relevant photo to be used as the background.",
+					"One of the primary challenges was the lack of up-to-date documentation regarding the integration of Express for building an API on Netlify. The available documentation was outdated by three years and included deprecated features. Through a combination of troubleshooting and research, I was able to navigate these limitations.",
+					"Additionally, to enhance the application’s dynamism, it was programmed to automatically determine the user's location based on their IP address. The application then fetches the prevailing weather conditions for that location, and selects an appropriate background image accordingly.",
 				],
 				roadmap: [],
 			},
@@ -240,7 +242,7 @@ export const content = {
 	},
 	downloadResume: {
 		title: "Resume",
-		subtitle: "REVIEW MY EXPERIENCE & FORMAL QUALIFICATIONS",
+		subtitle: "REVIEW MY CREDENTIALS",
 		para: "If you have any further questions about my skills or experience, please don't hesitate to contact me below",
 		btnText: "Download Resume",
 		btnLink:
