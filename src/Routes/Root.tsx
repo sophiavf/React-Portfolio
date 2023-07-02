@@ -20,7 +20,7 @@ export default function Root() {
 		});
 	}, []);
 	return (
-		<div className="">
+		<div className="max-w-full overflow-x-hidden">
 			<Navbar />
 			<Hero />
 			<Skills />

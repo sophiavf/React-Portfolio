@@ -16,13 +16,13 @@ export default function ProjectPage() {
 
 	return (
 		<div className="flex flex-col min-h-screen">
-			<div className="flex flex-col items-center justify-start flex-grow">
+			<div className="flex flex-col items-center justify-start flex-grow ">
 				<Link to="/" className="flex items-center mt-4 cursor-pointer">
 					<IoIosArrowBack className="mr-2" />
 					Back to homepage
 				</Link>
 				<div className="flex flex-col items-center mt-4">
-					<h1 className="text-4xl font-bold mb-4">{targetProject?.title}</h1>
+					<h1 className="mb-4">{targetProject?.title}</h1>
 					<div>
 						<img
 							className="rounded shadow min-h-full"
@@ -30,62 +30,64 @@ export default function ProjectPage() {
 							alt="..."
 						/>
 					</div>
-					<div className="max-w-3xl mx-auto pt-8">
+					<div className="max-w-3xl mx-auto pt-8 md:px-0 px-5">
 						<h2 className="text-2xl font-bold mb-2">
 							Project Purpose and Goal
 						</h2>
-						<p className="mb-6">{targetProject?.purposeAndGoal}</p>
+						<h5 className="mb-6">{targetProject?.purposeAndGoal}</h5>
 						<h2 className="text-2xl font-bold mb-2">
 							Web Stack and Explanation
 						</h2>
-						<p className="mb-6">{targetProject?.stackExplanation}</p>
+						<h5 className="mb-6">{targetProject?.stackExplanation}</h5>
 						<h2 className="text-2xl font-bold mb-2">
 							Problems and Thought Process
 						</h2>
 						{targetProject?.problemsAndProcess &&
 							targetProject.problemsAndProcess.length > 0 &&
 							targetProject?.problemsAndProcess.map((paragraph, index) => (
-								<p key={index} className="py-3">
+								<h5 key={index} className="py-3">
 									{paragraph}
-								</p>
+								</h5>
 							))}
-						<p className="mb-6">{targetProject?.problemsAndProcess}</p>
+						<h5 className="mb-6">{targetProject?.problemsAndProcess}</h5>
 						<div>
 							{targetProject?.roadmap && targetProject.roadmap.length > 0 && (
 								<>
 									<h2 className="text-2xl font-bold mb-2">Roadmap</h2>
 									<ul className="list-disc ml-6">
 										{targetProject.roadmap.map((backlogItem, index) => (
-											<li key={index}>{backlogItem}</li>
+											<li key={index}>
+												<h5>{backlogItem}</h5>
+											</li>
 										))}
 									</ul>
 								</>
 							)}
 						</div>
-					</div>
-					<div className="flex justify-around w-full py-8">
-						<button className="btn">
-							{targetProject && (
-								<Link
-									to={targetProject.livePreview}
-									onClick={() =>
-										window.open(targetProject.livePreview, "_blank")
-									}
-								>
-									Open live preview
-								</Link>
-							)}
-						</button>
-						<button className="btn">
-							{targetProject && (
-								<Link
-									to={targetProject.repo}
-									onClick={() => window.open(targetProject.repo, "_blank")}
-								>
-									Click to see code
-								</Link>
-							)}
-						</button>
+						<div className="flex justify-evenly w-full py-8 md:text-sm text-xs md:gap-0 gap-5">
+							<button className="btn">
+								{targetProject && (
+									<Link
+										to={targetProject.livePreview}
+										onClick={() =>
+											window.open(targetProject.livePreview, "_blank")
+										}
+									>
+										Open live preview
+									</Link>
+								)}
+							</button>
+							<button className="btn">
+								{targetProject && (
+									<Link
+										to={targetProject.repo}
+										onClick={() => window.open(targetProject.repo, "_blank")}
+									>
+										Click to see code
+									</Link>
+								)}
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>

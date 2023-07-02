@@ -240,7 +240,7 @@ export const content = {
 	},
 	downloadResume: {
 		title: "Resume",
-		subtitle: "Review my Experience & Formal Qualifications",
+		subtitle: "REVIEW MY EXPERIENCE & FORMAL QUALIFICATIONS",
 		para: "If you have any further questions about my skills or experience, please don't hesitate to contact me below",
 		btnText: "Download Resume",
 		btnLink:
