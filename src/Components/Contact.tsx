@@ -6,16 +6,16 @@ import toast, { Toaster } from "react-hot-toast";
 export default function Contact() {
 	const { Contact } = content;
 
-	const sendEmail = (e: { preventDefault: () => void; target: any; }) => {
+	const sendEmail = (e: { preventDefault: () => void; target: any }) => {
 		e.preventDefault();
 		const form = e.target;
 
 		emailjs
 			.sendForm(
-				import.meta.env.VITE_YOUR_SERVICE_ID ?? "",
-				import.meta.env.VITE_YOUR_TEMPLATE_ID ?? "",
+				"service_d3sfi5v",
+				"template_rystycr",
 				form,
-				import.meta.env.VITE_YOUR_PUBLIC_KEY ?? ""
+				"nqyUe-wZhlp2a8c-G"
 			)
 			.then(
 				(result) => {
