@@ -15,7 +15,12 @@ import express from "./assets/images/Skills/expressjs.png";
 import javaScript from "./assets/images/Skills/JavaScript.png";
 import playwright from "./assets/images/Skills/playwright.svg";
 import java from "./assets/images/Skills/java.png";
-import googleCloudFunctions from "./assets/images/Skills/googleCloudFunctions.png";
+import gitlab from "./assets/images/Skills/gitlab.png";
+import netlify from "./assets/images/Skills/netlify.png";
+import webpack from "./assets/images/Skills/webpack.png";
+import css from "./assets/images/Skills/css.png";
+import html from "./assets/images/Skills/html.png";
+import npm from "./assets/images/Skills/npm.png";
 
 // project gifs abd pics
 import project1 from "./assets/images/Projects/MunichTechEventAggregator.gif";
@@ -32,17 +37,7 @@ import { RiProjectorLine } from "react-icons/ri";
 import { HiOutlineDocument } from "react-icons/hi";
 
 import { LuHelpingHand } from "react-icons/lu";
-
-const technologyObjects = [
-	{
-		image: reactjs,
-		name: "",
-	},
-	{
-		image: typescript,
-		name: "",
-	},
-];
+import { platform } from "os";
 
 const currentYear = new Date().getFullYear();
 
@@ -92,64 +87,103 @@ export const content = {
 	},
 	//https://icons8.de/icons/
 	skills: {
-		title: "Skills",
-		subtitle: "MY TECHNICAL SKILLS",
+		title: "Technical Skills",
+		subtitle: "LANGUAGES AND TOOLS",
 		skills_content: [
 			{
 				name: "TypeScript",
 				logo: typescript,
+				category: "language",
 			},
 			{
 				name: "Node.js",
 				logo: nodejs,
+				category: "language",
 			},
 			{
 				name: "React.js",
 				logo: reactjs,
+				category: "framework",
 			},
 			{
 				name: "Firebase",
 				logo: firebase,
+				category: "platform",
 			},
 			{
 				name: "Git",
 				logo: git,
+				category: "tool",
 			},
 			{
 				name: "Tailwind CSS",
 				logo: tailwindCss,
+				category: "framework",
 			},
 			{
 				name: "React Router",
 				logo: reactRouter,
+				category: "framework",
 			},
 			{
 				name: "Jest",
 				logo: jest,
+				category: "framework",
 			},
 			{
 				name: "Vite",
 				logo: vite,
+				category: "tool",
 			},
 			{
 				name: "Express.js",
 				logo: express,
+				category: "framework",
 			},
 			{
 				name: "JavaScript",
 				logo: javaScript,
+				category: "language",
 			},
 			{
 				name: "Playwright",
 				logo: playwright,
+				category: "framework",
 			},
 			{
 				name: "Java",
 				logo: java,
+				category: "language",
 			},
 			{
-				name: "Google Cloud Functions",
-				logo: googleCloudFunctions,
+				name: "Gitlab",
+				logo: gitlab,
+				category: "platform",
+			},
+			{
+				name: "Netlify",
+				logo: netlify,
+				category: "platform",
+			},
+			{
+				name: "Webpack",
+				logo: webpack,
+				category: "bundler",
+			},
+			{
+				name: "HTML",
+				logo: html,
+				category: "language",
+			},
+			{
+				name: "CSS",
+				logo: css,
+				category: "language",
+			},
+			{
+				name: "NPM",
+				logo: npm,
+				category: "tool",
 			},
 		],
 		icon: MdArrowForward,
@@ -183,7 +217,18 @@ export const content = {
 				title: "Munich Tech Event Aggregator",
 				id: "MunichTechEventAggregator",
 				image: project1,
-				technologies: [typescript, reactjs, reactRouter, playwright, jest],
+				technologies: [
+					"TypeScript",
+					"React.js",
+					"Playwright",
+					"Jest",
+					"Firebase",
+					"Tailwind CSS",
+					"Node.js",
+					"Git",
+					"React Router",
+					"Vite",
+				],
 				livePreview: "https://my-tech-event-aggregator.web.app/",
 				repo: "https://github.com/sophiavf/My-Project-Event-App",
 				purposeAndGoal:
@@ -206,6 +251,14 @@ export const content = {
 				title: "My Portfolio Site",
 				id: "MyPortfolioSite",
 				image: project3,
+				technologies: [
+					"TypeScript",
+					"React.js",
+					"Tailwind CSS",
+					"Git",
+					"React Router",
+					"Vite",
+				],
 				livePreview: "https://devbysophia.online/",
 				repo: "https://github.com/sophiavf/React-Portfolio",
 				purposeAndGoal:
@@ -226,6 +279,16 @@ export const content = {
 				title: "Weather App",
 				id: "WeatherApp",
 				image: project2,
+				technologies: [
+					"JavaScript",
+					"React.js",
+					"Express.js",
+					"Node.js",
+					"Git",
+					"Vite",
+					"Netlify",
+					"Tailwind CSS",
+				],
 				livePreview: "https://sophiavf.github.io/Project-Weather-App/",
 				repo: "https://github.com/sophiavf/Project-Weather-App",
 				purposeAndGoal:
