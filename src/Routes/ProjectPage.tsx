@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../Layouts/Footer";
+import TechnologyBox from "../Components/TechnologyBox";
 import { Link, useParams } from "react-router-dom";
 
 import { content } from "../Content";
@@ -13,7 +14,6 @@ export default function ProjectPage() {
 	const targetProject = Projects.project_content.find(
 		(project) => project.id === projectId
 	);
-
 	return (
 		<div className="flex flex-col min-h-screen">
 			<div className="flex flex-col items-center justify-start flex-grow ">
@@ -28,15 +28,19 @@ export default function ProjectPage() {
 							className="rounded shadow min-h-full"
 							src={targetProject?.image}
 							alt="..."
-						/>
+						/>{" "}
 					</div>
 					<div className="max-w-3xl mx-auto pt-8 md:px-0 px-5">
+						<h2 className="text-2xl font-bold mb-2">Technologies</h2>
+						<br />
+						<TechnologyBox technologies={targetProject?.technologies} />
+						<br />
 						<h2 className="text-2xl font-bold mb-2">
 							Project Purpose and Goal
 						</h2>
 						<h5 className="mb-6">{targetProject?.purposeAndGoal}</h5>
 						<h2 className="text-2xl font-bold mb-2">
-							Web Stack and Explanation
+							Tech Stack and Explanation
 						</h2>
 						<h5 className="mb-6">{targetProject?.stackExplanation}</h5>
 						<h2 className="text-2xl font-bold mb-2">
@@ -49,7 +53,6 @@ export default function ProjectPage() {
 									{paragraph}
 								</h5>
 							))}
-						<h5 className="mb-6">{targetProject?.problemsAndProcess}</h5>
 						<div>
 							{targetProject?.roadmap && targetProject.roadmap.length > 0 && (
 								<>

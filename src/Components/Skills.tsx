@@ -1,5 +1,6 @@
 import { content } from "../Content";
 import React from "react";
+import TechnologyBox from "./TechnologyBox";
 
 export default function Skills() {
 	const { skills } = content;
@@ -15,25 +16,7 @@ export default function Skills() {
 					{skills.subtitle}
 				</h4>
 				<br />
-				<div className="flex flex-wrap gap-4 justify-center">
-					{skills.skills_content.map((skill, i) => (
-						<div
-							key={i}
-							data-aos="fade-up"
-							data-aos-delay={i * 100}
-							className="bg-white sm:cursor-pointer flex group w-full items-center gap-5 p-3  rounded-md border-2 border-slate-200 max-w-[17rem]"
-						>
-							<img
-								src={skill.logo}
-								alt="..."
-								className="w-10 group-hover:scale-125 duration-200"
-							/>
-							<div>
-								<h6>{skill.name}</h6>
-							</div>
-						</div>
-					))}
-				</div>
+				<TechnologyBox displayAll={true} />
 			</div>
 		</section>
 	);
