@@ -35,9 +35,11 @@ import { GoProjectRoadmap, GoGraph, GoCreditCard } from "react-icons/go";
 import { BiCodeAlt, BiHome } from "react-icons/bi";
 import { RiProjectorLine } from "react-icons/ri";
 import { HiOutlineDocument } from "react-icons/hi";
-
 import { LuHelpingHand } from "react-icons/lu";
-import { platform } from "os";
+
+// import certification logos
+import dataCamp from "./assets/images/Certifications/dataCamp.webp";
+import udemy from "./assets/images/Certifications/logo-udemy.svg"
 
 const currentYear = new Date().getFullYear();
 
@@ -188,6 +190,99 @@ export const content = {
 		],
 		icon: MdArrowForward,
 	},
+	aboutMe: [
+		{
+			Certifications: {
+				title: "Certificates",
+				subtitle: "",
+				certifications_content: [
+					{
+						title: "Intermediate R",
+						IssuingOrg: [{ name: "DataCamp", logo: dataCamp }],
+						issueDate: new Date("October, 2020"),
+						URL: "https://www.datacamp.com/statement-of-accomplishment/course/f6e7ffb0d0d9f687332689045f3887cdd0d646f3",
+						skills: [
+							"Statistical Data Analysis",
+							"Data Analysis",
+							"Data Modeling",
+						],
+					},
+					{
+						title: "Introduction to Relational Databases in SQL",
+						IssuingOrg: [{ name: "DataCamp", logo: dataCamp }],
+						issueDate: new Date("January, 2021"),
+						URL: "https://www.datacamp.com/statement-of-accomplishment/course/aa6e8c6bd22d17e7a776c4d12c88fbb9e2f7df6d?raw=1",
+						skills: [
+							"SQL commands",
+							"Enforce data consistency with attribute constraints",
+							"Uniquely identify records with key constraints",
+							"Glue together tables with foreign keys",
+						],
+					},
+					{
+						title: "Computer Science Career Path",
+						IssuingOrg: [{ name: "Codecademy", logo: dataCamp }],
+						issueDate: "",
+						URL: "https://www.codecademy.com/profiles/Sophiavf/certificates/5b5001a11d176d7acd8b2bf8",
+						skills: [
+							"Conditionals and Control Flow",
+							"Loops",
+							"Functions",
+							"The apply family",
+							"Utilities",
+						],
+					},
+					{
+						title:
+							"Introduction to Project Management Principles and Practices Specialization",
+						IssuingOrg: [{ name: "Coursera", logo: dataCamp }],
+						issueDate: "",
+						URL: "https://www.coursera.org/account/accomplishments/specialization/8JBM5FJ8VHL7",
+						skills: [
+							"Managing Project Budgets",
+							"Risk Management",
+							"Scheduling",
+							"Project Management",
+							"Project Planning",
+						],
+					},
+					{
+						title: "GitLab CI: Pipelines, CI/CD and DevOps for Beginners",
+						IssuingOrg: [{ name: "Udemy", logo: udemy }],
+						issueDate: "",
+						URL: "https://www.udemy.com/certificate/UC-89b23b54-de07-44d3-8068-d2e8dbe11d7d/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email",
+						skills: [
+							"Automatic deployments using AWS",
+							"Automate your builds, tests, and deployments",
+							"Build pipelines with code quality checks, unit tests, API testing",
+							"Dynamic environments",
+							"Learn industry 'best practices' in building CI/CD pipelines",
+						],
+					},
+				],
+			},
+		},
+		{
+			education: {
+				title: "Education",
+				subtitle: "",
+				certifications_content: [
+					{
+						title: "",
+						start: "",
+						finish: "",
+						instituition: "",
+					},
+					{
+						title: "",
+						start: "",
+						finish: "",
+						instituition: "",
+					},
+				],
+			},
+		},
+	],
 	WhatIOffer: {
 		title: "Transferable skills & Experience",
 		subtitle: "WHAT I OFFER",
@@ -236,9 +331,9 @@ export const content = {
 				stackExplanation:
 					"Backend Service: Firebase was chosen due to its comprehensive back-end-as-a-service capabilities. It streamlines the development process and integrates efficiently with Google Cloud products. The potential future integration of user authorization was also a consideration. Database: Firestore, a NoSQL database within Firebase, was adopted for storing event information.",
 				problemsAndProcess: [
-					"Extracting data from Meetup and Eventbrite was complex due to varied data formats. Playwright was used with Eventbrite to monitor responses containing specific text, thus capturing JSON data. For Meetup, data extraction was performed from a script tag in server-rendered content",
+					"Extracting data from Meetup and Eventbrite was complex due to varied data formats. Playwright was used with Eventbrite to monitor responses containing specific text, thus capturing JSON data. For Meetup, data extraction was performed from a script tag in server-rendered content. The event summary for Meetup came back in markdown notation, which when rendered as is caused CSS formatting issues so it is converted into HTML using a plugin.",
 					"To accommodate external HTTP requests made by the data collectors, I upgraded to Firebase's paid tier. To avoid inaccuracy and ensure cost-effectiveness, extensive testing was performed using Playwright and Jest.",
-					"Three cloud functions were deployed to run daily: 1) Cleanup Events - deletes outdated events. 2) Meetup Scraper - aggregates technology events in Munich from meetup.com. 3) Eventbrite Scraper - accumulates free technology events from eventbrite.com.",
+					"Using a Procedure-driven approach, three cloud functions were deployed to run daily to scheduled times which perform tasks updating the database with new events, updating existing records, and removing old or irrelevant events: 1) Cleanup Events - deletes outdated events. 2) Meetup Scraper - aggregates technology events in Munich from meetup.com. 3) Eventbrite Scraper - accumulates free technology events from eventbrite.com.",
 					"After data collection, the application cross-references the newly scraped data with existing records to update changes or removals due to event cancellations or alterations.",
 				],
 				roadmap: [
